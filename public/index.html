@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="//cdn.tutorialjinni.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.tutorialjinni.com/bootstrap-select/1.12.4/css/bootstrap-select.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//g.tutorialjinni.com/mojoaxel/bootstrap-select-country/dist/css/bootstrap-select-country.min.css"
+    /> -->
+    <title>Document</title>
+    <style>
+      .card:hover {
+        box-shadow: 2px 2px 2px 1px rgba(72, 69, 69, 0.2);
+      }
+
+      p {
+        color: red;
+      }
+      .title {
+        margin-bottom: 5px;
+      }
+      .form-container {
+        width: 100vw;
+      }
+      .hidden {
+        display: none;
+      }
+      .position {
+        position: absolute;
+        top: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="my-5" id="main">
+      <form
+        action="/student"
+        id="form"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="d-flex">
+          <div class="form-container" id="form-1">
+            <div class="mx-3 mx-sm-auto col-sm-10">
+              <h4 class="text-secondary ms-3 fs-5">Registration Form</h4>
+            </div>
+
+            <div
+              style="min-width: 350px"
+              class="d-flex flex-wrap align-item-center justify-content-center gap-2 col-sm-10 gap-lg-4 py-5 mx-3 mx-sm-auto pt-3 p-md-5 text-secondary border border-2 rounded rounded-3"
+            >
+              <!--------------Name area----------------->
+
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="firstName"
+                  >Name<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="FirstnameError"></span></span
+                ></label>
+                
+                <input
+                  id="Firstname"
+                  class="form-control control-input"
+                  placeholder="First"
+                  name="Firstname"
+                  type="text"
+                  required
+                />
+              </div>
+
+              <div class="col-8 col-md-5">
+                
+                <label for=""></label>
+                
+                <input
+                  id="Lastname"
+                  class="form-control control-input"
+                  placeholder="Last"
+                  name="Lastname"
+                  type="text"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <!--------------Name area End------------->
+              <!--------------DOB area ------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2"
+                  >Date of Birth<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="DateofBirthError"></span></span
+                ></label>
+                <input
+                  class="form-control"
+                  name="DateofBirth"
+                  type="date"
+                  required
+                />
+              </div>
+              <!--------------DOB End ------------->
+              <!--------------Email Area ------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2"
+                  >Email<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="EmailError"></span></span
+                ></label>
+                <input
+                  class="form-control"
+                  name="Email"
+                  type="email"
+                  required
+                />
+              </div>
+              <!------------Email Area End------------->
+              <!------------Father's Name------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Fatherfirstname"
+                  >Father's name<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="FatherfirstnameError"></span></span
+                ></label>
+                <input
+                  id="Fatherfirstname"
+                  class="form-control control-input"
+                  placeholder="First"
+                  name="Fatherfirstname"
+                  type="text"
+                  required
+                />
+              </div>
+
+              <div class="col-9 col-md-5">
+                <label for=""></label>
+                <input
+                  id="Fatherlastname"
+                  class="form-control control-input"
+                  placeholder="Last"
+                  name="Fatherlastname"
+                  type="text"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <!---------Fathers Name Area end---------->
+              <!---------Mother's Name Area ---------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Motherfirstname"
+                  >Mother's name<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="MotherfirstnameError"></span></span
+                ></label>
+                <input
+                  id="Motherfirstname"
+                  class="form-control control-input"
+                  placeholder="First"
+                  name="Motherfirstname"
+                  type="text"
+                  required
+                />
+              </div>
+
+              <div class="col-9 col-md-5">
+                <label for=""></label>
+                <input
+                  id="Motherlastname"
+                  class="form-control control-input"
+                  placeholder="Last"
+                  name="Motherlastname"
+                  type="text"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <!---------Mothers Name Area end---------->
+              <!-----------------Gender---------------->
+              <div class="col-9 col-md-5">
+                <label class="control-label ms-2"
+                  >Gender
+                  <span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="GenderError"></span></span
+                ></label>
+                <div class="row ms-3 mt-2">
+                  <div class="form-check col">
+                    <input
+                      class="form-check-input"
+                      id="male"
+                      type="radio"
+                      name="Gender"
+                      value="Male"
+                    />
+                    <label for="male" class="form-check-label">Male</label>
+                  </div>
+                  <div class="form-check col">
+                    <input
+                      class="form-check-input"
+                      id="female"
+                      type="radio"
+                      name="Gender"
+                      value="Male"
+                    />
+                    <label for="female" class="form-check-label">Female</label>
+                  </div>
+                </div>
+              </div>
+              <!-----------------Gender End------------>
+              <!-----------------Nationality------------>
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Nationality"
+                  >Nationality<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="NationalityError"></span></span
+                ></label>
+                <input
+                  id="Nationality"
+                  class="form-control control-input"
+                  name="Nationality"
+                  type="text"
+                  required
+                />
+              </div>
+              <!-------------Nationality End------------>
+              <!-----------------Address------------>
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Street"
+                  >Address<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="StreetError"></span></span
+                ></label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  id="Street"
+                  placeholder="Street Address"
+                  name="Street"
+                  maxlength="50"
+                ></textarea>
+              </div>
+              <!-----------------Address End------------>
+              <!-----------------City ------------>
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="City"
+                  >City<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="CityError"></span></span
+                ></label>
+                <input
+                  id="City"
+                  class="form-control control-input"
+                  name="City"
+                  type="text"
+                  required
+                />
+              </div>
+              <!-----------------City End------------>
+              <!-----------------Country------------>
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Country"
+                  >Country<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="CountryError"></span></span
+                ></label>
+                <select
+                  name="Country"
+                  class="selectpicker countrypicker"
+                  data-flag="true"
+                >
+                  <option value="">-Select Country-</option>
+                  <option value="India">India</option>
+                  <option value="Usa">Usa</option>
+                  <option value="China">China</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Japan">Japan</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Sri Lanka">Sri Lanka</option>
+                  <option value="Russia">Russia</option>
+                  <option value="Afghanisthan">Afghanisthan</option>
+                  <option value="Norway">Norway</option>
+                </select>
+                <!-- <script src="//cdn.tutorialjinni.com/jquery/3.6.1/jquery.min.js"></script>
+                <script src="//cdn.tutorialjinni.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="//cdn.tutorialjinni.com/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+                <script src="//g.tutorialjinni.com/mojoaxel/bootstrap-select-country/dist/js/bootstrap-select-country.min.js"></script> -->
+              </div>
+              <!-----------------Country End------------>
+              <!-----------------Telephone Home--------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Telephonehome"
+                  >Telephone Home<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="TelephonehomeError"></span></span
+                ></label>
+                <input
+                  class="form-control"
+                  id="Telephonehome"
+                  placeholder="ex:XXXX-XXXXXX"
+                  name="Telephonehome"
+                  type="text"
+                  maxlength="10"
+                />
+              </div>
+              <!------------Telephone Home End---------->
+              <!------------MObile---------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Telephonemobile"
+                  >Mobile Number<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="TelephonemobileError"></span></span
+                ></label>
+                <input
+                  class="form-control"
+                  id="Telephonemobile"
+                  placeholder="ex:XXXXXXXXXX"
+                  name="Telephonemobile"
+                  type="text"
+                  maxlength="10"
+                />
+              </div>
+              <!------------MObile End---------->
+
+              <!------------First Page Next button---------->
+              <div class="col-9 col-md-5 mt-2 text-
+              center">
+              <br>
+              <br>
+              <br>
+                <button
+                  id="nextBtn"
+                  type="button"
+                  class="btn btn-primary col-12 col-lg-3 toggle-btn"
+                >
+                  Next >
+                </button>
+              </div>
+              <!------------First Page Next button End-------->
+              <!------------First Page  End-------->
+            </div>
+          </div>
+          <!-----------Second Page Educational Details --------------->
+          <div class="form-container hidden" id="form-2">
+            <div class="mx-3 mx-sm-auto col-sm-10">
+              <h4 class="text-secondary ms-3 fs-5">Educational Details</h4>
+            </div>
+
+            <div
+              style="min-width: 350px"
+              class="d-flex flex-wrap align-item-center justify-content-center gap-2 col-sm-10 gap-lg-4 py-5 mx-3 mx-sm-auto pt-3 p-md-5 text-secondary border border-2 rounded rounded-3"
+            >
+              <!-------------------HSC Instituation Start----------------------->
+              <!-------------------HSC Instituation Name----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="HSCname"
+                  >HSC Instituation Name<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="HSCnameError"></span></span
+                ></label>
+                <input
+                  id="HSCname"
+                  class="form-control control-input"
+                  name="HSCname"
+                  type="text"
+                  required
+                  placeholder="HSC Institute Name"
+                />
+              </div>
+              <!-------------------HSC Instituation Name End------------------->
+
+              <!-------------------HSC Instituation Board----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2"
+                  >HSC Board<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="HSCboardError"></span></span
+                ></label>
+                <select class="form-select" name="HSCboard" id="">
+                  <option value="">Select Board</option>
+                  <option value="CBSE">CBSE</option>
+                  <option value="ICSE">ICSE</option>
+                  <option value="State Board">State Board</option>
+                </select>
+              </div>
+              <!-------------------HSC Instituation Board End-------------------->
+              <!-------------------HSC Instituation Percentage----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="HSCpercentage"
+                  >HSC Mark<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="HSCpercentageError"></span></span
+                ></label>
+                <input
+                  id="HSCpercentage"
+                  class="form-control control-input"
+                  name="HSCpercentage"
+                  type="text"
+                  required
+                  placeholder="Enter in Percentage"
+                />
+              </div>
+              <!-------------------HSC Instituation Percentage End---------------->
+              <!-------------------HSC Instituation End----------------------->
+
+              <!-------------------SSC Instituation Start----------------------->
+              <!-------------------SSC Instituation Name----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="SSCname"
+                  >SSC Instituation Name<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="SSCnameError"></span></span
+                ></label>
+                <input
+                  id="SSCname"
+                  class="form-control control-input"
+                  name="SSCname"
+                  type="text"
+                  required
+                  placeholder="SSC Institute Name"
+                />
+              </div>
+              <!-------------------SSC Instituation Name End------------------->
+
+              <!-------------------SSC Instituation Board----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2"
+                  >SSC Board<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="SSCboardError"></span></span
+                ></label>
+                <select class="form-select" name="SSCboard" id="">
+                  <option value="">Select Board</option>
+                  <option value="CBSE">CBSE</option>
+                  <option value="ICSE">ICSE</option>
+                  <option value="State Board">State Board</option>
+                </select>
+              </div>
+              <!-------------------SSC Instituation Board End-------------------->
+              <!-------------------SSC Instituation Percentage----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="SSCpercentage"
+                  >SSC Mark<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="SSCpercentageError"></span></span
+                ></label>
+                <input
+                  id="SSCpercentage"
+                  class="form-control control-input"
+                  name="SSCpercentage"
+                  type="text"
+                  required
+                  placeholder="Enter in Percentage"
+                />
+              </div>
+              <!-------------------SSC Instituation Percentage End---------------->
+              <!-------------------SSC Instituation End----------------------->
+
+              <!-------------------Current Instituation Start----------------------->
+              <!-------------------Current Instituation Name----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="CurrentInstuationname"
+                  >Currently Educational Instuation Name<span
+                    class="text-danger"
+                    >*&nbsp;&nbsp;<span
+                      id="CurrentInstuationnameError"
+                    ></span></span
+                ></label>
+                <input
+                  id="CurrentInstuationname"
+                  class="form-control control-input"
+                  name="CurrentInstuationname"
+                  type="text"
+                  required
+                  placeholder="Current Institute Name"
+                />
+              </div>
+              <!-------------------Current Instituation Name End------------------->
+              <!-------------------Current Instituation Percentage----------------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2" for="Currentpercentage"
+                  >Overall Mark<span class="text-danger"
+                    >*&nbsp;&nbsp;<span
+                      id="CurrentpercentageError"
+                    ></span></span
+                ></label>
+                <input
+                  id="Currentpercentage"
+                  class="form-control control-input"
+                  name="Currentpercentage"
+                  type="text"
+                  required
+                  placeholder="Enter in Percentage"
+                />
+              </div>
+              <!-------------------Current Instituation Percentage End---------------->
+              <!-------------------Backlog---------------->
+              <div class="col-9 col-md-5">
+                <label class="form-label ms-2"
+                  >Current Backlog<span class="text-danger"
+                    >*&nbsp;&nbsp;<span id="BacklogError"></span></span
+                ></label>
+                <select class="form-select" name="Backlog" id="BacklogError">
+                  <option value="">Select Option</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+              <!-------------------Backlog End---------------->
+              <!-------------------Current Instituation End----------------------->
+
+              <!-- Next and Previous button -->
+              <div class="col-9 col-md-5 text-center">
+                <button
+                  class="btn btn-primary col-6 toggle-btn"
+                  type="button"
+                  id="previousBtn-2"
+                >
+                  < Previous
+                </button>
+              </div>
+              <div class="col-9 col-md-5 mt-2 text-center">
+                <button
+                  id="nextBtn2"
+                  type="button"
+                  class="btn btn-primary col-12 col-lg-3 toggle-btn"
+                >
+                  Next >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Next and Previous button End-->
+          <!------------------Second Page End-------------------->
+
+          <!------------------------Upload Page-------------------->
+          <div class="form-container hidden" id="form-3">
+            <div class="mx-3 mx-sm-auto col-sm-10">
+              <h4 class="text-secondary ms-3 fs-5">Upload Documents</h4>
+            </div>
+
+            <div
+              style="min-width: 350px"
+              class="d-flex flex-wrap align-item-center justify-content-center gap-2 col-sm-10 gap-lg-4 py-5 mx-3 mx-sm-auto pt-3 p-md-5 text-secondary border border-2 rounded rounded-3"
+            >
+              <div class="thirdpage">
+                <h1>Upload Documents</h1>
+                <div class="upload">
+                  <label class="form-label ms-2" for="profilePhoto"
+                    >Upload Recent Passportsize Photo<span class="text-danger"
+                      >*&nbsp;&nbsp;<span id="profilePhotoError"></span></span
+                  ></label>
+                  <br />
+                  <input
+                    id="profilePhoto"
+                    class="form-control control-input"
+                    name="profilePhoto"
+                    type="file"
+                  />
+                </div>
+
+                <div class="upload">
+                  <label class="form-label ms-2" for="SSCCertificate"
+                    >Upload SSE Certificate<span class="text-danger"
+                      >*&nbsp;&nbsp;<span id="SSCCertificateError"></span></span
+                  ></label>
+                  <br />
+                  <input
+                    id="SSCCertificate"
+                    class="form-control control-input"
+                    name="SSCCertificate"
+                    type="file"
+                  />
+                </div>
+
+                <div class="upload">
+                  <label class="form-label ms-2" for="HSCCertificate"
+                    >Upload HSE Certificate<span class="text-danger"
+                      >*&nbsp;&nbsp;<span id="HSCCertificateError"></span></span
+                  ></label>
+                  <br />
+                  <input
+                    id="HSCCertificate"
+                    class="form-control control-input"
+                    name="HSCCertificate"
+                    type="file"
+                  />
+                </div>
+
+                <div class="upload">
+                  <label class="form-label ms-2" for="degreeCertificate"
+                    >Upload Degree Certificate<span class="text-danger"
+                      >*&nbsp;&nbsp;<span
+                        id="degreeCertificateError"
+                      ></span></span
+                  ></label>
+                  <br />
+                  <input
+                    id="degreeCertificate"
+                    class="form-control control-input"
+                    name="degreeCertificate"
+                    type="file"
+                  />
+                </div>
+
+                <div class="col-9 col-md-5 text-center">
+                  <button
+                    class="btn btn-primary col-6 toggle-btn"
+                    type="button"
+                    id="previousBtn"
+                  >
+                    < Previous
+                  </button>
+                </div>
+                <div class="col-9 col-md-5 text-center">
+                  <button
+                    class="btn btn-primary col-6"
+                    type="submit"
+                    id="submitBtn"
+                  >
+                    SUBMIT
+                  </button>
+                </div>
+              </div>
+              <!-------------------------------Upload Page End-------------->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="./js/Button.js" defer="true"></script>
+  </body>
+</html>
